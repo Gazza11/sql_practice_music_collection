@@ -5,7 +5,7 @@ from models.album import Album
 
 def create_artist(artist):
     sql = "INSERT INTO albums (artist_name) VALUES (%s) RETURNING *"
-    values = [artist.album_name]
+    values = [artist.artist_name]
     results = run_sql(sql, values)
     id = results[0]['id']
     artist.id = id
